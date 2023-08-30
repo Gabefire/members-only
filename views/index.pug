@@ -1,12 +1,19 @@
 extends layout
 
 block content
-  button(onclick="location.href = '/new'" class="new-message" value="New Message") New Message
-  div(class="message-board")
-    each message in messages 
-      div(class="message")
-        div= message.text
-        div(class="message-footer")
-          div= message.user
-          div= message.added
+  - console.log(messages)
+  if user
+    div Welcome #{user.display_name}
+    button(onclick="location.href = '/new'" class="new-message" value="New Message") New Message
+  
+  if messages.length > 0
+    div(class="message-board")
+      each message in messages 
+        div(class="message")
+          div= message.text
+          div(class="message-footer")
+            div= message.user
+            div= message.added
+  else
+    div.message-board No messages yet
         

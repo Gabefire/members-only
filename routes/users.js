@@ -1,5 +1,7 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+
+const auth_controller = require("../controllers/authController");
 
 /* GET user log in. */
 router.get("/login", auth_controller.user_login_get);

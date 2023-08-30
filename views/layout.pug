@@ -6,7 +6,12 @@ html
   body
     header 
       h1 Member's Only
-      div.auth-btns
-        button.login(type="button") Log In
-        button.sign-up(type="button") Sign Up
+      if !user
+        div.auth-btns
+          button.login(type="button" onclick = "window.location.href='/user/login'") Log In
+          button.sign-up(type="button" onclick = "window.location.href='/user/sign-up'") Sign Up
+      else
+        div.auth-btns
+          button.member(type="button" onclick = "window.location.href='/user/membership'") Become Member
+          button.sign-out(type="button" onclick = "window.location.href='/user/logout") Sign Out
     block content

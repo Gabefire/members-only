@@ -1,13 +1,12 @@
 extends layout 
 
-block content 
-  
+block header 
   form.auth-form(action="" method="POST")
     h1 Log In
     .form-group 
       label(for="email") Email:
-      input#email.form-control(type="text", placeholder="Email" name="email" require = "true")
+      input#email.form-control(type="text", placeholder="Email" name="username" require = "true")
     .form-group
       label(for="password") Password:
       input#password.form-control(type="password" placeholder="Password" name="password" require = "true")
-    button.btn.sign-up Sign Up
+    button.btn.sign-up Login

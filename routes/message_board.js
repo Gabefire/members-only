@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const message_board_controller = require("../controllers/messageboardController");
+
 /* GET message board. */
 router.get("/", message_board_controller.index);
 

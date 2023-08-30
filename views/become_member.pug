@@ -1,0 +1,10 @@
+extends layout 
+
+
+block content
+  - if (user === undefined) window.location.href='/'
+  form(action="" method="post")
+    - const memberStatus = user.member
+    .form-group-check
+      label(for="become-member") Member?:
+      input#become-member(type="checkbox" name="member_status" value=(memberStatus))
