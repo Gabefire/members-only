@@ -5,7 +5,7 @@ block content
   form.auth-form(action="" method="POST")
     h1 Sign Up
     .form-group
-      label(for="user-name") Display name:
+      label(for="display-name") Display name:
       input#display-name.form-control(type="text" placeholder="Display name" name="display_name" require="true")
     .form-group 
       label(for="email") Email:
@@ -16,5 +16,8 @@ block content
     .form-group 
       label(for="confirm-password") Confirm Password: 
       input#confirm-password.form-control(type="password" placeholder="Confirm password" name="confirm_password" require="true")
+    .form-group-check
+      label(for="is-admin") Admin: 
+      input#is-admin(type="checkbox", name="admin" default="false")
     button.btn.sign-up Sign Up
 

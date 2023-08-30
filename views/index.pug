@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  button(onclick="location.href = '/new'" class="new-message" value="New Message") New Message
+  div(class="message-board")
+    each message in messages 
+      div(class="message")
+        div= message.text
+        div(class="message-footer")
+          div= message.user
+          div= message.added
+        
